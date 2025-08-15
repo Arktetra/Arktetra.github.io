@@ -1,0 +1,95 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Crimson, Georgia, serif;
+}
+
+:root {
+    --white-1: #bbbbbb;
+    --white-2: #d7d7d7;
+    --white-3: #ffffff;
+    --black-1: #444444;
+    --black-2: #272727;
+    --black-3: #000000;
+}
+
+:where(body){
+    --background-color: #ffffff;
+    --text-color: var(--black-2);
+    --text-color-dim: var(--black-1);
+}
+
+html {
+    --darkmode: 0;
+    container-name: root;
+    container-type: normal;
+}
+
+html:has(#color-scheme-light:checked) { --darkmode: 0; }
+html:has(#color-scheme-dark:checked) { --darkmode: 1; }
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+nav > ul {
+    display: flex;
+    gap: 8px;
+    list-style-type: none;
+    color: var(--text-color-dim);
+    /* flex-direction: row; */
+}
+
+li > a {
+    text-decoration: none;
+    color: var(--text-color-dim);
+}
+
+.menu {
+    display: flex;
+}
+
+.nav-container {
+    display: flex;
+    /* width: 100%; */
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.prose {
+    margin: auto;
+    width: 70%;
+}
+
+.prose > a {
+    text-decoration: underline;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.prose > h1 {
+    margin: 1em 0em 1em 0em;
+    /* font-size: 24px; */
+}
+
+.prose > p {
+    margin: 1em 0em 1em 0em;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+@container root style(--darkmode: 1) {
+    body {
+        --background-color: #000000;
+        --text-color: var(--white-2);
+        --text-color-dim: var(--white-1);
+    }
+}
+
+/* @media (prefers-color-scheme: dark) {
+    :where(body) {
+        --background-color: #000000;
+        --text-color: var(--white-2);
+    }
+} */

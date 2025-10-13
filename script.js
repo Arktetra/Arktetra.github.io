@@ -31,3 +31,12 @@ theme_img.addEventListener("click", () => {
 
 	currentThemeSetting = newTheme;
 })
+
+
+const hamburger = document.querySelector(".hamburger");
+const offScreenMenu = document.querySelector(".offscreen-menu");
+
+hamburger.addEventListener("click", () => {
+	hamburger.classList.toggle("active");
+	offScreenMenu.classList.toggle("active");
+});

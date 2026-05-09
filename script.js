@@ -25,7 +25,7 @@ theme_img.addEventListener("click", () => {
 
 	theme_img.setAttribute("src", src);
 
-	document.querySelector("html").setAttribute("data-theme", newTheme);
+	document.querySelector("html").setAttribute("color-scheme", newTheme);
 
 	localStorage.setItem("theme", newTheme);
 
